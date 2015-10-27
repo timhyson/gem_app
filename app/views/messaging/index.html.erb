@@ -1,0 +1,16 @@
+<h1>Messages#index</h1>
+
+<!-- <%= @messages.inspect %> -->
+
+<main class="conversations">
+<table >
+  <% @messages.each do |message|%>
+  <tr>
+    <span class="author"><%= other_user_in_conversation(message.from_id, message.to_id).email %></span>
+    <dialog><%= message.message %></dialog>
+    <time><%=message.updated_at.strftime("%H:%M")%></time>
+  </tr>
+  <% end %>
+</table>
+
+</main>

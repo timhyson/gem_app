@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get '/message/:from_id' => 'messaging#conversation', as: 'conversation'
+get '/messages' => 'messaging#index', as: 'messages'
+post '/message/:to_id' => 'messaging#send_message', as: 'send_message'
+
 devise_for :users
 resources :addresses
   # The priority is based upon order of creation: first created -> highest priority.
