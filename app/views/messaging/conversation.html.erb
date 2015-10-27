@@ -1,28 +1,54 @@
-<h1>
-  Conversation
-</h1>
+<div id = "conv_wrapper">
+  <div id = "conv_main">
 
-<div id="chatbox">
+  <div class="chat-box">
+    <div class = "header">
+      Conversation
+    </div>
 
-  <% @message.each do |m| %>
-    <div class="from">
-      <% if current_user.id == m.from_id %>
-        <h2>
-          You
-        </h2>
-      <% else %>
-        <h2>
-          Them
-        </h2>
-      <% end %>
-    </div>
-    <div class="message">
-      <%= m.message  %>
-      <%= m.seen ? "seen" : "sent"  %>
-    </div>
-  <% end %>
-</div>
-<%= form_tag("/message/#{@to}") do  %>
+    <% @message.each do |m| %>
+    <div id="messages" class="messages">
+      <ul>
+        <li>
+        <% if current_user.id == m.from_id %>
+          <span class = "left">
+            You:
+            <%= m.message  %>
+          </span>
+          <% if m.seen %>
+            <span class = "seen">seen</span>
+            <% else %>
+            <span class = "sent">sent</span>
+            <% end %>
+          <div class="clear"></div>
+        </li>
+        <% else %>
+      <li>
+          <span class = "right">
+            Them:
+            <%= m.message  %>
+          </span>
+          <% if m.seen %>
+            <span class = "seen">seen</span>
+            <% else %>
+            <span class = "sent">sent</span>
+            <% end %>
+          <div class="clear"></div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+    <div class="clear"></div>
+    <% end %>
+
+  <div class="input-box">
+  <%= form_tag("/message/#{@to}") do  %>
   <%= text_field_tag(:message)  %>
   <%= submit_tag("Send")  %>
-<% end %>
+  <% end %>
+</div>
+</div>
+
+
+</div>
+</div>

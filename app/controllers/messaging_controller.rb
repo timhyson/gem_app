@@ -15,6 +15,6 @@ class MessagingController < ApplicationController
     Message.create(from_id: current_user.id, to_id: params[:to_id], message: message, conversation_code: conversation_code)
     @message = Message.get_message_between(current_user, params[:to_id])
     @to = params[:to_id]
-    render :conversation
+    redirect_to send_message_path
   end
 end
