@@ -1,16 +1,25 @@
-<h1>Messages#index</h1>
+<!doctype html>
+<html>
+  <body>
 
-<!-- <%= @messages.inspect %> -->
-
-<main class="conversations">
-<table >
-  <% @messages.each do |message|%>
-  <tr>
-    <span class="author"><%= other_user_in_conversation(message.from_id, message.to_id).email %></span>
-    <dialog><%= message.message %></dialog>
-    <time><%=message.updated_at.strftime("%H:%M")%></time>
-  </tr>
-  <% end %>
-</table>
-
-</main>
+    <main id="messages" class="messages">
+      <h1>Messages</h1>
+      <table>
+        <% @messages.each do |message|%>
+          <tr>
+              <td><%= other_user_in_conversation(message.from_id, message.to_id).email %></td>
+              <td><%= link_to truncate(message.message,length: 35), conversation_path(message.from_id) %></td>
+              <td><%= message.updated_at.strftime("%H:%M") %></td>
+              <td>
+                <%if message.seen%>
+                read
+                <%else%>
+                unread
+                <%end%>
+              </td>
+          </tr>
+        <% end %>
+      </table>
+    </main>
+  </div>
+</body>
