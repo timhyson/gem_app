@@ -1,4 +1,11 @@
 
+p.message_seen {
+  color:green;
+}
+
+td.message_unseen {
+  color:red;
+}
 
 #chatbox{
   width:70%;

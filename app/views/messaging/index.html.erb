@@ -3,23 +3,27 @@
   <body>
 
     <main id="messages" class="messages">
-      <h1>Messages</h1>
-      <table>
-        <% @messages.each do |message|%>
-          <tr>
-              <td><%= other_user_in_conversation(message.from_id, message.to_id).email %></td>
-              <td><%= link_to truncate(message.message,length: 35), conversation_path(message.from_id) %></td>
-              <td><%= message.updated_at.strftime("%H:%M") %></td>
-              <td>
-                <%if message.seen%>
-                read
-                <%else%>
-                unread
-                <%end%>
-              </td>
-          </tr>
-        <% end %>
-      </table>
+    <h1 class="message_seen">Messages</h1>
+    <table>
+      <% @messages.each do |message|%>
+        <tr>
+          <td><%= other_user_in_conversation(message.from_id, message.to_id).email %></td>
+          <td>
+            <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :style => "color: red;" %>
+            <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :style => "font %>
+          </td>
+          <td><%= message.updated_at.strftime("%H:%M") %></td>
+          <td>
+            <%if message.seen%>
+              read
+            <%else%>
+              unread
+            <%end%>
+          </td>
+        </tr>
+      <% end %>
+    </table>
     </main>
-  </div>
-</body>
+
+  </body>
+</html>
