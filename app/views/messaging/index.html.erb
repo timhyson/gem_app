@@ -11,9 +11,9 @@
           <td><%= other_user_in_conversation(message.from_id, message.to_id).email %></td>
           <td>
             <%if message.seen%>
-              <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :style => "font-weight: normal;"  %>
+              <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :id => "message_seen"  %>
             <%else%>
-              <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :style => "font-weight: bold; color: #3d3d3d;" %>
+              <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :id => "message_unseen" %>
             <%end%>
           </td>
           <td><% if message.updated_at > Time.now.beginning_of_day %>
