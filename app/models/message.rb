@@ -1,5 +1,4 @@
 class Message < ActiveRecord::Base
-
 	def self.get_message_between(current_user, other_user_id)
 		conversation_code = [current_user.id, other_user_id.to_i].sort.join("-")
 		conversation = where(:conversation_code => conversation_code).all

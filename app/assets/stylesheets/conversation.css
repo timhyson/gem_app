@@ -7,7 +7,7 @@
   margin: auto;
 }
 
-.chat-box
+.conv-chat-box
 {
     width: 400px;
     margin: auto;
@@ -22,7 +22,7 @@
     background-color: #6d84b4;
 }
 
-.messages
+.conv_messages
 {
     padding: 10px;
     height: 100px;
@@ -34,13 +34,13 @@
     overflow-y: scroll;
 }
 
-.messages ul
+.conv_messages ul
 {
     padding: 0px;
     list-style-type: none;
 }
 
-.messages ul li
+.conv_messages ul li
 {
     height: auto;
     margin-bottom: 10px;
@@ -49,7 +49,7 @@
     padding-right: 10px;
 }
 
-.messages ul li span
+.conv_messages ul li span
 {
     display: inline-block;
     max-width: 200px;
@@ -62,12 +62,12 @@
     border-color: grey;
 }
 
-.messages ul li span.left
+.conv_messages ul li span.left
 {
     float: left;
 }
 
-.messages ul li span.left:after
+.conv_messages ul li span.left:after
 {
     content: "";
     display: inline-block;
@@ -81,7 +81,7 @@
     border-right: 8px solid white;
 }
 
-.messages ul li span.left:before
+.conv_messages ul li span.left:before
 {
     content: "";
     display: inline-block;
@@ -95,7 +95,7 @@
     border-right: 8px solid black;
 }
 
-.messages ul li span.right:after
+.conv_messages ul li span.right:after
 {
     content: "";
     display: inline-block;
@@ -109,7 +109,7 @@
     border-left: 8px solid #dbedfe;
 }
 
-.messages ul li span.right:before
+.conv_messages ul li span.right:before
 {
     content: "";
     display: inline-block;
@@ -123,7 +123,7 @@
     border-left: 8px solid black;
 }
 
-.messages ul li span.right
+.conv_messages ul li span.right
 {
     float: right;
     background-color: #dbedfe;
@@ -159,7 +159,7 @@
 }
 
 input#message {
-
+    display: inline-block;
     width: 300px;
     height: 40px;
 }
@@ -172,4 +172,10 @@ span.seen {
 .sent {
   color: grey;
   border-width: 0 !important;
+
+}
+
+span.submit input {
+  color: green;
+  width: 67px;
 }

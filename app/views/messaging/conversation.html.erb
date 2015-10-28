@@ -1,25 +1,27 @@
 <div id = "conv_wrapper">
+<p><%= link_to "Go to Messages", messages_path %></p>
+
   <div id = "conv_main">
 
-  <div class="chat-box">
+  <div class="conv-chat-box">
     <div class = "header">
-      Conversation
+    <h2> Conversation </h2>
     </div>
 
     <% @message.each do |m| %>
-    <div id="messages" class="messages">
+    <div id="messages" class="conv_messages">
       <ul>
         <li>
         <% if current_user.id == m.from_id %>
           <span class = "left">
             You:
             <%= m.message  %>
+            <% if m.seen %>
+              <span class = "seen">✔✔</span>
+              <% else %>
+              <span class = "sent">✔</span>
+              <% end %>
           </span>
-          <% if m.seen %>
-            <span class = "seen">seen</span>
-            <% else %>
-            <span class = "sent">sent</span>
-            <% end %>
           <div class="clear"></div>
         </li>
         <% else %>
@@ -28,14 +30,11 @@
             Them:
             <%= m.message  %>
           </span>
-          <% if m.seen %>
-            <span class = "seen">seen</span>
-            <% else %>
-            <span class = "sent">sent</span>
-            <% end %>
           <div class="clear"></div>
         <% end %>
+
       </li>
+
     </ul>
   </div>
     <div class="clear"></div>
@@ -44,9 +43,11 @@
   <div class="input-box">
   <%= form_tag("/message/#{@to}") do  %>
   <%= text_field_tag(:message)  %>
+  <span class = "submit">
   <%= submit_tag("Send")  %>
+  <end>
   <% end %>
-</div>
+</span>
 </div>
 
 
