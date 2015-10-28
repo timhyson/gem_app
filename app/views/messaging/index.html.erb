@@ -9,17 +9,13 @@
         <tr>
           <td><%= other_user_in_conversation(message.from_id, message.to_id).email %></td>
           <td>
-            <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :style => "color: red;" %>
-            <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :style => "font %>
-          </td>
-          <td><%= message.updated_at.strftime("%H:%M") %></td>
-          <td>
             <%if message.seen%>
-              read
+              <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :style => "font-weight: normal;"  %>
             <%else%>
-              unread
+              <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :style => "font-weight: bold; color: #3d3d3d;" %>
             <%end%>
           </td>
+          <td><%= message.updated_at.strftime("%H:%M") %></td>
         </tr>
       <% end %>
     </table>

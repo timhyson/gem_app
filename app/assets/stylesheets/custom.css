@@ -18,7 +18,7 @@ td.message_unseen {
 h1{
   padding-left: 30px;
   font-family: Arial, Helvetica, sans-serif;
-  color:#666;
+  color:#3d3d3d;
   text-shadow: 1px 1px 0px #fff;
 }
 
@@ -43,7 +43,7 @@ table a:link {
   text-decoration: none;
 }
 table a:visited {
-  color: #999999;
+  color: #666;
   font-weight: bold;
   text-decoration:none;
 }
