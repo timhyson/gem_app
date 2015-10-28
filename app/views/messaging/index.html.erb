@@ -3,7 +3,7 @@
   <body>
 
     <%= current_user.email%>
-    <main id="messages" class="messages"> 
+   <main id="messages" class="messages"> 
     <h1 class="message_seen">Messages</h1>
     <table>
       <% @messages.each do |message|%>
@@ -16,10 +16,10 @@
               <%= link_to truncate(message.message,length: 35), conversation_path(message.from_id), :id => "message_unseen" %>
             <%end%>
           </td>
-          <td><% if message.updated_at > Time.now.beginning_of_day %>
-            <%="#{time_ago_in_words(message.updated_at)} ago"%>
+          <td><% if message.created_at > Time.now.beginning_of_day %>
+            <%="#{time_ago_in_words(message.created_at)} ago"%>
           <% else %>
-            <%= message.updated_at.strftime("%b %d, %Y") %>
+            <%= message.created_at.strftime("%b %d, %Y") %>
           <% end %></td>
         </tr>
       <% end %>
