@@ -1,0 +1,181 @@
+#conv_wrapper {
+  width: 100%;
+}
+
+#conv_main {
+  width: 500px;
+  margin: auto;
+}
+
+.conv-chat-box
+{
+    width: 400px;
+    margin: auto;
+}
+
+.header
+{
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #6d84b4;
+}
+
+.conv_messages
+{
+    padding: 10px;
+    height: 100px;
+    background-color: green;
+    background-color: rgb(237, 239, 244);
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    overflow-y: scroll;
+}
+
+.conv_messages ul
+{
+    padding: 0px;
+    list-style-type: none;
+}
+
+.conv_messages ul li
+{
+    height: auto;
+    margin-bottom: 10px;
+    clear: both;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.conv_messages ul li span
+{
+    display: inline-block;
+    max-width: 200px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+}
+
+.conv_messages ul li span.left
+{
+    float: left;
+}
+
+.conv_messages ul li span.left:after
+{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -8.5px;
+    top: 7px;
+    height: 0px;
+    width: 0px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid white;
+}
+
+.conv_messages ul li span.left:before
+{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -9px;
+    top: 7px;
+    height: 0px;
+    width: 0px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid black;
+}
+
+.conv_messages ul li span.right:after
+{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: -8px;
+    top: 6px;
+    height: 0px;
+    width: 0px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #dbedfe;
+}
+
+.conv_messages ul li span.right:before
+{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: -9px;
+    top: 6px;
+    height: 0px;
+    width: 0px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid black;
+}
+
+.conv_messages ul li span.right
+{
+    float: right;
+    background-color: #dbedfe;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.input-box
+{
+    background-color: white;
+    height: 50px;
+    padding: 0px;
+}
+
+.input-box
+{
+    padding: 0px;
+    width: 378px;
+    height: 100%;
+    display: inline-block;
+    outline: 0px;
+    border-width: 0px;
+    resize: none;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    font-size: 12px;
+    padding: 10px;
+    border-top-width: 0px;
+}
+
+input#message {
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+}
+
+span.seen {
+  color: green;
+  border-width: 0 !important;
+}
+
+.sent {
+  color: grey;
+  border-width: 0 !important;
+
+}
+
+span.submit input {
+  color: green;
+  width: 67px;
+}
